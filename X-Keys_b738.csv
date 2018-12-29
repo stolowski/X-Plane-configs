@@ -1,8 +1,8 @@
 Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
 AP - CMD A,,,,0,laminar/B738/autopilot/cmd_a_status,,=0,,=1,,1,laminar/B738/autopilot/cmd_a_press,laminar/B738/autopilot/cmd_a_press,,Auto Pilot A ON,,,,,,
 AP - CMD B,,,1,0,laminar/B738/autopilot/cmd_b_status,,=0,,=1,,1,laminar/B738/autopilot/cmd_b_press,laminar/B738/autopilot/cmd_b_press,,Auto Pilot B ON,,,,,,
-Ident,,,,1,sim/cockpit2/radios/indicators/transponder_id,,,,,,,sim/transponder/transponder_ident,,Transponder Ident,,sim/cockpit/radios/transponder_code,,0,7777,,Transponder set to [N]
-XPDR Mode,,,1,1,sim/cockpit2/radios/actuators/transponder_mode,,,,,=2,,,,,,sim/cockpit2/radios/actuators/transponder_mode,,0,3,up-down,Transponder Off[=0];Transponder Standby[=1];Transponder On Mode A[=2];Transponder On Mode C[=3]
+Ident,OK,,,1,laminar/B738/push_button/transponder_ident,,=0,,=1,,,*laminar/B738/push_button/transponder_ident_dn,,,,sim/cockpit/radios/transponder_code,,0,7777,,Transponder set to [N]
+XPDR Mode,OK,,1,1,laminar/B738/knob/transponder_pos,,=0,,=5,<4,,,,,,SRS/X-KeyPad/SharedInt[1],,1,5,up-down,
 COM1,OK,,,2,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
 COM1 XFR,OK,,,10,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
 COM2,OK,,,3,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
@@ -18,8 +18,10 @@ FD COPILOT,OK,,1,8,laminar/B738/autopilot/flight_director_fo_pos,,=0,,=1,,0,lami
 ATHR,OK,,,9,laminar/B738/autopilot/autothrottle_arm_pos,,=0,,=1,,0,laminar/B738/autopilot/autothrottle_arm_toggle,laminar/B738/autopilot/autothrottle_arm_toggle,,,,,,,,
 LANDING LIGHTS,OK,,,18,laminar/B738/switch/land_lights_left_pos,,=0,,=1,,,,,,,laminar/B738/switch/land_lights_left_pos;laminar/B738/switch/land_lights_right_pos,,0,1,wrap,
 LOGO LIGHTS,OK,,,19,sim/cockpit2/switches/generic_lights_switch[1],,1,,=1,,,,,,,sim/cockpit2/switches/generic_lights_switch[1],,0,1,wrap,
+RUNWAY LIGHTS,OK,,,27,sim/cockpit2/switches/generic_lights_switch[2],,=0,,=1,,,,,,,sim/cockpit2/switches/generic_lights_switch[2];sim/cockpit2/switches/generic_lights_switch[3],,0,1,wrap,
 Parking brakes,OK,,,15,sim/cockpit2/controls/parking_brake_ratio,,=0,,=1,,0,sim/flight_controls/brakes_toggle_max,,,,,,,,,
-,,,,,,,,,,,,,,,,,,,,,
+WARN,,,,22,laminar/B738/annunciator/master_caution_light,,=0,,,=1,,laminar/B738/push_button/master_caution1,,,,,,,,,
+AUTO BRK,OK,,,23,laminar/B738/autobrake/autobrake_pos,,=1,,>1,,,,,,,SRS/X-KeyPad/SharedInt[2],,0,1,wrap,
 HDG,OK,,,16,laminar/B738/autopilot/hdg_sel_status,,1,,>0,0,1,laminar/B738/autopilot/hdg_sel_press,laminar/B738/autopilot/hdg_sel_press,,,laminar/B738/autopilot/mcp_hdg_dial,,0,360,,Heading set to [N] degrees
 HDG SYNC,,,,17,,,1,,,,,sim/autopilot/heading_sync,,,,,,,,,
 TAXI LIGHTS,OK,,,26,laminar/B738/toggle_switch/taxi_light_brightness_pos,,1,,>0,,<2,laminar/B738/toggle_switch/taxi_light_brigh_toggle,laminar/B738/toggle_switch/taxi_light_brigh_toggle,,,,,,,,
@@ -36,7 +38,7 @@ NAV,OK,,,32,laminar/B738/autopilot/lnav_status,,1,,>0,0,0,laminar/B738/autopilot
 VNAV,OK,,,40,laminar/B738/autopilot/vnav_status1,,1,,>0,0,0,laminar/B738/autopilot/vnav_press,,,,,,,,,
 SPD,,,,41,laminar/B738/autopilot/speed_status1,,=0,,=1,,,laminar/B738/autopilot/speed_press,,,,sim/cockpit/autopilot/airspeed,,100,380,,
 HDG UP,OK,,,33,,,,,1,,,*laminar/B738/autopilot/heading_up,,,,,,,,,
-STROBE LIGHT,OK,,,42,laminar/B738/toggle_switch/position_light_pos,,!1,,=1,,0,,,,,SRS/X-KeyPad/SharedInt[0],,0,1,wrap,
+STROBE LIGHT,OK,,,42,laminar/B738/toggle_switch/position_light_pos,,!1,,=1,,0,,,,,SRS/X-KeyPad/SharedInt[0],,-1,1,up-down,
 Baro,OK,,,14,,,1,,,,,,,,,laminar/B738/EFIS/baro_sel_in_hg_pilot;laminar/B738/EFIS/baro_sel_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
 NAV LIGHTS,OK,,,50,sim/cockpit2/switches/generic_lights_switch[0],,!1,,1,,1,,,,,sim/cockpit2/switches/generic_lights_switch[0],,0,1,wrap,
 VS,,,,48,laminar/B738/autopilot/vs_status,,1,,>0,,0,laminar/B738/autopilot/vs_press,laminar/B738/autopilot/vs_press,,,sim/cockpit/autopilot/vertical_velocity,,,,,Vertical Speed to [n] feet per minute
