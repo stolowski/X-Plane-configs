@@ -3,14 +3,14 @@ AP - CMD A,,,,0,laminar/B738/autopilot/cmd_a_status,,=0,,=1,,1,laminar/B738/auto
 AP - CMD B,,,1,0,laminar/B738/autopilot/cmd_b_status,,=0,,=1,,1,laminar/B738/autopilot/cmd_b_press,laminar/B738/autopilot/cmd_b_press,,Auto Pilot B ON,,,,,,
 Ident,OK,,,1,laminar/B738/push_button/transponder_ident,,=0,,=1,,,*laminar/B738/push_button/transponder_ident_dn,,,,sim/cockpit/radios/transponder_code,,0,7777,,Transponder set to [N]
 XPDR Mode,OK,,1,1,laminar/B738/knob/transponder_pos,,=0,,=5,<4,,,,,,SRS/X-KeyPad/SharedInt[1],,1,5,up-down,
-COM1,OK,,,2,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
-COM1 XFR,OK,,,10,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
-COM2,OK,,,3,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
-COM2 XFR,OK,,,11,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
-NAV1,OK,,,4,sim/cockpit2/radios/actuators/audio_selection_nav1,,!1,,1,,,sim/audio_panel/monitor_audio_nav1,,,,sim/cockpit/radios/nav1_freq_hz,100,,,,NAV 1 Set to [n] Mega Hertz
-NAV1 XFR,OK,,,12,,,1,,,,,sim/radios/nav1_standy_flip,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
-NAV2,OK,,,5,sim/cockpit2/radios/actuators/audio_selection_nav2,,!1,,1,,,sim/audio_panel/monitor_audio_nav2,,,,sim/cockpit/radios/nav2_freq_hz,100,,,,NAV 2 Set to [n] Mega Hertz
-NAV2 XFR,OK,,,13,,,1,,,,,sim/radios/nav2_standy_flip,,,,sim/cockpit/radios/nav2_stdby_freq_hz,100,,,,NAV 2 Stand By Set to [n] Mega Hertz
+COM1,OK,,,2,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
+COM1 XFR,OK,,,10,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
+COM2,OK,,,3,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
+COM2 XFR,OK,,,11,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
+NAV1,OK,,,4,sim/cockpit2/radios/actuators/audio_selection_nav1,,!1,,1,,,sim/audio_panel/monitor_audio_nav1,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+NAV1 XFR,OK,,,12,,,1,,,,,sim/radios/nav1_standy_flip,,,,sim/cockpit/radios/nav1_freq_hz,100,,,,NAV 1 Set to [n] Mega Hertz
+NAV2,OK,,,5,sim/cockpit2/radios/actuators/audio_selection_nav2,,!1,,1,,,sim/audio_panel/monitor_audio_nav2,,,,sim/cockpit/radios/nav2_stdby_freq_hz,100,,,,NAV 2 Stand By Set to [n] Mega Hertz
+NAV2 XFR,OK,,,13,,,1,,,,,sim/radios/nav2_standy_flip,,,,sim/cockpit/radios/nav2_freq_hz,100,,,,NAV 2 Set to [n] Mega Hertz
 ADF1,,,,6,sim/cockpit2/radios/actuators/audio_selection_adf1,,!1,,1,,,sim/audio_panel/monitor_audio_adf1,,,,sim/cockpit/radios/adf1_freq_hz,,,,,ADF 1 Set to [n] Kilo Hertz
 ADF2,,,1,6,sim/cockpit2/radios/actuators/audio_selection_adf2,,!1,,1,,,sim/audio_panel/monitor_audio_adf2,,,,sim/cockpit/radios/adf2_freq_hz,,,,,ADF 2 Set to [n] Kilo Hertz
 FD,OK,,,8,laminar/B738/autopilot/flight_director_pos,,=0,,=1,,0,laminar/B738/autopilot/flight_director_toggle,,,,,,,,,
@@ -39,7 +39,8 @@ VNAV,OK,,,40,laminar/B738/autopilot/vnav_status1,,1,,>0,0,0,laminar/B738/autopil
 SPD,,,,41,laminar/B738/autopilot/speed_status1,,=0,,=1,,,laminar/B738/autopilot/speed_press,,,,sim/cockpit/autopilot/airspeed,,100,380,,
 HDG UP,OK,,,33,,,,,1,,,*laminar/B738/autopilot/heading_up,,,,,,,,,
 STROBE LIGHT,OK,,,42,laminar/B738/toggle_switch/position_light_pos,,!1,,=1,,0,,,,,SRS/X-KeyPad/SharedInt[0],,-1,1,up-down,
-Baro,OK,,,14,,,1,,,,,,,,,laminar/B738/EFIS/baro_sel_in_hg_pilot;laminar/B738/EFIS/baro_sel_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
+Baro,OK,,,14,laminar/B738/EFIS/baro_set_std_pilot,,=0,,=1,,,,,,,laminar/B738/EFIS/baro_sel_in_hg_pilot;laminar/B738/EFIS/baro_sel_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
+Baro,OK,,1,14,laminar/B738/EFIS/baro_set_std_pilot,,=0,,=1,,,laminar/B738/EFIS_control/capt/push_button/std_press;laminar/B738/EFIS_control/fo/push_button/std_press,,,,laminar/B738/EFIS/baro_sel_in_hg_pilot;laminar/B738/EFIS/baro_sel_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
 NAV LIGHTS,OK,,,50,sim/cockpit2/switches/generic_lights_switch[0],,!1,,1,,1,,,,,sim/cockpit2/switches/generic_lights_switch[0],,0,1,wrap,
 VS,,,,48,laminar/B738/autopilot/vs_status,,1,,>0,,0,laminar/B738/autopilot/vs_press,laminar/B738/autopilot/vs_press,,,sim/cockpit/autopilot/vertical_velocity,,,,,Vertical Speed to [n] feet per minute
 CRS DOWN,OK,,,49,,,1,,,,,*laminar/B738/autopilot/course_pilot_dn,,,,sim/cockpit/radios/nav1_obs_degm,,0,360,,Course set to [N] degrees

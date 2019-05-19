@@ -1,0 +1,83 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+AP - CMD A,,,,0,,,=0,,=1,,1,,,,Auto Pilot A ON,,,,,,
+AP - CMD B,,,1,0,,,=0,,=1,,1,,,,Auto Pilot B ON,,,,,,
+Ident,,,,1,,,=0,,=1,,,,,,,sim/cockpit/radios/transponder_code,,0,7777,,Transponder set to [N]
+XPDR Mode,,,1,1,,,=0,,=5,<4,,,,,,SRS/X-KeyPad/SharedInt[1],,1,5,up-down,
+COM1,,,,2,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
+COM1 XFR,,,,10,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
+COM2,,,,3,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
+COM2 XFR,,,,11,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
+NAV1,,,,4,sim/cockpit2/radios/actuators/audio_selection_nav1,,!1,,1,,,sim/audio_panel/monitor_audio_nav1,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+NAV1 XFR,,,,12,,,1,,,,,sim/radios/nav1_standy_flip,,,,sim/cockpit/radios/nav1_freq_hz,100,,,,NAV 1 Set to [n] Mega Hertz
+NAV2,,,,5,sim/cockpit2/radios/actuators/audio_selection_nav2,,!1,,1,,,sim/audio_panel/monitor_audio_nav2,,,,sim/cockpit/radios/nav2_stdby_freq_hz,100,,,,NAV 2 Stand By Set to [n] Mega Hertz
+NAV2 XFR,,,,13,,,1,,,,,sim/radios/nav2_standy_flip,,,,sim/cockpit/radios/nav2_freq_hz,100,,,,NAV 2 Set to [n] Mega Hertz
+ADF1,,,,6,sim/cockpit2/radios/actuators/audio_selection_adf1,,!1,,1,,,sim/audio_panel/monitor_audio_adf1,,,,sim/cockpit/radios/adf1_freq_hz,,,,,ADF 1 Set to [n] Kilo Hertz
+ADF2,,,1,6,sim/cockpit2/radios/actuators/audio_selection_adf2,,!1,,1,,,sim/audio_panel/monitor_audio_adf2,,,,sim/cockpit/radios/adf2_freq_hz,,,,,ADF 2 Set to [n] Kilo Hertz
+FD,,,,8,,,=0,,=1,,0,,,,,,,,,,
+FD COPILOT,,,1,8,,,=0,,=1,,0,,,,,,,,,,
+ATHR,,,,9,,,=0,,=1,,0,,,,,,,,,,
+LANDING LIGHTS,OK,,,18,FJS/732/lights/InBoundLLightSwitch1,,=0,,=1,,,,,,,SRS/X-KeyPad/SharedInt[1],,0,1,wrap,
+LOGO LIGHTS,OK,,,19,FJS/732/lights/LogoLightSwitch,,=0,,=1,,,,,,,FJS/732/lights/LogoLightSwitch,,0,1,wrap,
+RUNWAY LIGHTS,,,,27,sim/cockpit2/switches/generic_lights_switch[2],,=0,,=1,,,,,,,sim/cockpit2/switches/generic_lights_switch[2];sim/cockpit2/switches/generic_lights_switch[3],,0,1,wrap,
+Parking brakes,,,,15,sim/cockpit2/controls/parking_brake_ratio,,=0,,=1,,0,sim/flight_controls/brakes_toggle_max,,,,,,,,,
+WARN,OK,,,22,FJS/732/Annun/MasterCautionLITL,,=0,,,>0,,,,,,SRS/X-KeyPad/SharedInt[0],,0,1,wrap,
+AUTO BRK,,,,23,,,=1,,>1,,,,,,,SRS/X-KeyPad/SharedInt[2],,0,1,wrap,
+HDG,,,,16,,,1,,>0,0,1,,,,,sim/cockpit2/autopilot/heading_dial_deg_mag_pilot,,0,360,,Heading set to [N] degrees
+HDG SYNC,,,,17,,,1,,,,,sim/autopilot/heading_sync,,,,,,,,,
+TAXI LIGHTS,,,,26,,,1,,>0,,<2,,,,,,,,,,
+Plan Pushback,,,,31,,,,,,,,BetterPushback/start_planner,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+Start Pushback,,,1,31,,,,,,,,BetterPushback/start,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+ND Mode,,,,35,,,,,,,,,,,,,,0,3,wrap,
+Range Up,,,,43,,,1,,,,,,,,,,,0,7,up,
+Range Down,,,1,43,,,1,,,,,,,,,,,0,7,down,
+,,,,,,,,,,,,,,,,,,,,,
+ALT,,,,24,,,1,,>0,0,0,,,,,sim/cockpit/autopilot/altitude,,0,40000,,Altitude set to [n] feet
+HDG DOWN,OK,,,25,,,1,,,,,*sim/autopilot/heading_down,,,,,,,,,
+BEACON LIGHT,,,,34,FJS/732/lights/AntiColLightSwitch,,=0,,=1,,1,,,,,FJS/732/lights/AntiColLightSwitch,,0,1,wrap,
+NAV,,,,32,,,1,,>0,0,0,,,,,,,,,,
+VNAV,,,,40,,,1,,>0,0,0,,,,,,,,,,
+SPD,,,,41,,,=0,,=1,,,,,,,sim/cockpit/autopilot/airspeed,,100,380,,
+HDG UP,OK,,,33,,,1,,,,,*sim/autopilot/heading_up,,,,,,,,,
+STROBE LIGHT,,,,42,FJS/732/lights/StrobeLightSwitch,,!1,,=1,,0,,,,,FJS/732/lights/StrobeLightSwitch,,0,1,wrap,
+Baro,OK,,,14,,,=0,,=1,,,,,,,sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot;sim/cockpit2/gauges/actuators/barometer_setting_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
+Baro,OK,,1,14,,,=0,,=1,,,sim/instruments/barometer_2992,,,,,,,,,
+NAV LIGHTS,,,,50,FJS/732/lights/WingLightSwitch,,=0,,=1,,1,,,,,FJS/732/lights/WingLightSwitch,,0,1,wrap,
+VS,,,,48,,,1,,>0,,0,,,,,sim/cockpit/autopilot/vertical_velocity,,,,,Vertical Speed to [n] feet per minute
+CRS DOWN,,,,49,,,1,,,,,,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
+CRS DOWN,,,1,49,,,1,,,,,,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_copilot,,0,360,,Course set to [N] degrees
+,,,,,,,,,,,,,,,,,,,,,
+CDI,,,,58,,,,,,,,,,,,sim/cockpit/switches/HSI_selector,,0,2,wrap,H S I Set to V O R  1[=0];H S I Set to V O R 2[=1];H S I Set To GPS[=2]
+CRS UP,OK,,,57,,,1,,,,,,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
+CRS UP,OK,,1,57,,,1,,,,,,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_copilot,,0,360,,Course set to [N] degrees
+7,,,,60,,,,,1,,,SRS/X-KeyPad/Keypad_7,,,,,,,,,
+7,,,1,60,,,,,1,,,SRS/X-KeyPad/Keypad_7,,,,,,,,,
+4,,,,61,,,,,1,,,SRS/X-KeyPad/Keypad_4,,,,,,,,,
+4,,,1,61,,,,,1,,,SRS/X-KeyPad/Keypad_4,,,,,,,,,
+1,,,,62,,,,,1,,,SRS/X-KeyPad/Keypad_1,,,,,,,,,
+1,,,1,62,,,,,1,,,SRS/X-KeyPad/Keypad_1,,,,,,,,,
+Minus,,,,63,,,,,1,,,SRS/X-KeyPad/Keypad_Minus,,,,,,,,,
+Minus,,,1,63,,,,,1,,,SRS/X-KeyPad/Keypad_Minus,,,,,,,,,
+LVL CHG,,,,56,,,=0,,=1,,,,,,,,,,,,
+VOR LOC,,,,64,,,=0,,=1,,,,,,,,,,,,
+APR,,,,65,,,=0,,=1,,,,,,,,,,,,
+CLR,,,,67,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
+CLR,,,1,67,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
+8,,,,68,,,,,1,,,SRS/X-KeyPad/Keypad_8,,,,,,,,,
+8,,,1,68,,,,,1,,,SRS/X-KeyPad/Keypad_8,,,,,,,,,
+5,,,,69,,,,,1,,,SRS/X-KeyPad/Keypad_5,,,,,,,,,
+5,,,1,69,,,,,1,,,SRS/X-KeyPad/Keypad_5,,,,,,,,,
+2,,,,70,,,,,1,,,SRS/X-KeyPad/Keypad_2,,,,,,,,,
+2,,,1,70,,,,,1,,,SRS/X-KeyPad/Keypad_2,,,,,,,,,
+0,,,,71,,,,,1,,,SRS/X-KeyPad/Keypad_0,,,,,,,,,
+0,,,1,71,,,,,1,,,SRS/X-KeyPad/Keypad_0,,,,,,,,,
+SHIFT,,,,72,,,1,,,,,SRS/X-KeyPad/Toggle_Shift,,,,,,,,,
+SHIFT,,,1,72,,,1,,,,,SRS/X-KeyPad/Toggle_Shift,,,,,,,,,
+9,,,,76,,,,,1,,,SRS/X-KeyPad/Keypad_9,,,,,,,,,
+9,,,1,76,,,,,1,,,SRS/X-KeyPad/Keypad_9,,,,,,,,,
+6,,,,77,,,,,1,,,SRS/X-KeyPad/Keypad_6,,,,,,,,,
+6,,,1,77,,,,,1,,,SRS/X-KeyPad/Keypad_6,,,,,,,,,
+3,,,,78,,,,,1,,,SRS/X-KeyPad/Keypad_3,,,,,,,,,
+3,,,1,78,,,,,1,,,SRS/X-KeyPad/Keypad_3,,,,,,,,,
+.,,,,79,,,,,1,,,SRS/X-KeyPad/Keypad_Decimal,,,,,,,,,
+.,,,1,79,,,,,1,,,SRS/X-KeyPad/Keypad_Decimal,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
