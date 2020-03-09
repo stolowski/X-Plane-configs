@@ -1,0 +1,83 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+AP - CMD A,,,,0,laminar/B738/autopilot/cmd_a_status,,=0,,=1,,1,laminar/B738/autopilot/cmd_a_press,laminar/B738/autopilot/cmd_a_press,,Auto Pilot A ON,,,,,,
+AP - CMD B,,,1,0,laminar/B738/autopilot/cmd_b_status,,=0,,=1,,1,laminar/B738/autopilot/cmd_b_press,laminar/B738/autopilot/cmd_b_press,,Auto Pilot B ON,,,,,,
+N1 - TOGA,TODO,,,1,,,,,,,,,,,,,,,,,
+CRS DOWN,OK,,,10,,,1,,,,,*laminar/B738/autopilot/course_pilot_dn,,,,sim/cockpit/radios/nav1_obs_degm,,0,360,,Course set to [N] degrees
+CRS DOWN,OK,,1,10,,,1,,,,,*laminar/B738/autopilot/course_copilot_dn,,,,sim/cockpit/radios/nav1_obs_degm2,,0,360,,Course set to [N] degrees
+CDI,,,,11,,,,,,,,,,,,sim/cockpit/switches/HSI_selector,,0,2,wrap,H S I Set to V O R  1[=0];H S I Set to V O R 2[=1];H S I Set To GPS[=2]
+NAV1 XFR,OK,,,12,,,1,,,,,sim/radios/nav1_standy_flip,,,,sim/cockpit/radios/nav1_freq_hz,100,,,,NAV 1 Set to [n] Mega Hertz
+NAV2 XFR,OK,,,13,,,1,,,,,sim/radios/nav2_standy_flip,,,,sim/cockpit/radios/nav2_freq_hz,100,,,,NAV 2 Set to [n] Mega Hertz
+Baro,OK,,,14,laminar/B738/EFIS/baro_set_std_pilot,,=0,,=1,,,,,,,laminar/B738/EFIS/baro_sel_in_hg_pilot;laminar/B738/EFIS/baro_sel_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
+Baro,OK,,1,14,laminar/B738/EFIS/baro_set_std_pilot,,=0,,=1,,,laminar/B738/EFIS_control/capt/push_button/std_press;laminar/B738/EFIS_control/fo/push_button/std_press,,,,laminar/B738/EFIS/baro_sel_in_hg_pilot;laminar/B738/EFIS/baro_sel_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
+Parking brakes,OK,,,15,sim/cockpit2/controls/parking_brake_ratio,,=0,,=1,,0,sim/flight_controls/brakes_toggle_max,,,,,,,,,
+HDG,OK,,,16,laminar/B738/autopilot/hdg_sel_status,,1,,>0,0,1,laminar/B738/autopilot/hdg_sel_press,laminar/B738/autopilot/hdg_sel_press,,,laminar/B738/autopilot/mcp_hdg_dial,,0,360,,Heading set to [N] degrees
+HDG SYNC,,,,17,,,1,,,,,sim/autopilot/heading_sync,,,,,,,,,
+CRS UP,OK,,,18,,,1,,,,,*laminar/B738/autopilot/course_pilot_up,,,,sim/cockpit/radios/nav1_obs_degm,,0,360,,Course set to [N] degrees
+CRS UP,OK,,1,18,,,1,,,,,*laminar/B738/autopilot/course_copilot_up,,,,sim/cockpit/radios/nav1_obs_degm,,0,360,,Course set to [N] degrees
+NAV LIGHTS,OK,,,19,sim/cockpit2/switches/generic_lights_switch[0],,!1,,1,,1,,,,,sim/cockpit2/switches/generic_lights_switch[0],,0,1,wrap,
+COM1,OK,,,2,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
+COM1 XFR,OK,,1,2,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
+LANDING LIGHTS,OK,,,20,laminar/B738/switch/land_lights_left_pos,,=0,,=1,,,,,,,laminar/B738/switch/land_lights_left_pos;laminar/B738/switch/land_lights_right_pos,,0,1,wrap,
+WARN,,,,22,laminar/B738/annunciator/master_caution_light,,=0,,,=1,,laminar/B738/push_button/master_caution1,,,,,,,,,
+AUTO BRK,OK,,,23,laminar/B738/autobrake/autobrake_pos,,=1,,>1,,,,,,,SRS/X-KeyPad/SharedInt[2],,0,1,wrap,
+ALT,,,,24,laminar/B738/autopilot/alt_hld_status,,1,,>0,0,0,laminar/B738/autopilot/alt_hld_press,laminar/B738/autopilot/alt_hld_press,,,laminar/B738/autopilot/mcp_alt_dial,,0,40000,,Altitude set to [n] feet
+HDG DOWN,OK,,,26,,,,,1,,,*laminar/B738/autopilot/heading_dn,,,,,,,,,
+TAXI LIGHTS,OK,,,27,laminar/B738/toggle_switch/taxi_light_brightness_pos,,1,,>0,,<2,laminar/B738/toggle_switch/taxi_light_brigh_toggle,laminar/B738/toggle_switch/taxi_light_brigh_toggle,,,,,,,,
+LOGO LIGHTS,OK,,,28,sim/cockpit2/switches/generic_lights_switch[1],,1,,=1,,,,,,,sim/cockpit2/switches/generic_lights_switch[1],,0,1,wrap,
+COM2,OK,,,3,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
+COM2 XFR,OK,,1,3,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
+Ident,OK,,,30,laminar/B738/push_button/transponder_ident,,=0,,=1,,,*laminar/B738/push_button/transponder_ident_dn,,,,sim/cockpit/radios/transponder_code,,0,7777,,Transponder set to [N]
+XPDR Mode,OK,,1,30,laminar/B738/knob/transponder_pos,,=0,,=5,<4,,,,,,SRS/X-KeyPad/SharedInt[1],,1,5,up-down,
+Plan Pushback,OK,,,31,,,,,,,,BetterPushback/start_planner,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+Start Pushback,OK,,1,31,,,,,,,,BetterPushback/start,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+NAV,OK,,,32,laminar/B738/autopilot/lnav_status,,1,,>0,0,0,laminar/B738/autopilot/lnav_press,,,,,,,,,
+HDG UP,OK,,,34,,,,,1,,,*laminar/B738/autopilot/heading_up,,,,,,,,,
+BEACON LIGHT,OK,,,35,sim/cockpit/electrical/beacon_lights_on,,!1,,1,,1,sim/lights/beacon_lights_toggle,sim/lights/beacon_lights_toggle,,,,,,,,
+RUNWAY LIGHTS,OK,,,36,sim/cockpit2/switches/generic_lights_switch[2],,=0,,=1,,,,,,,sim/cockpit2/switches/generic_lights_switch[2];sim/cockpit2/switches/generic_lights_switch[3],,0,1,wrap,
+NAV1,OK,,,4,sim/cockpit2/radios/actuators/audio_selection_nav1,,!1,,1,,,sim/audio_panel/monitor_audio_nav1,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+VNAV,OK,,,40,laminar/B738/autopilot/vnav_status1,,1,,>0,0,0,laminar/B738/autopilot/vnav_press,,,,,,,,,
+SPD,,,,41,laminar/B738/autopilot/speed_status1,,=0,,=1,,,laminar/B738/autopilot/speed_press,,,,sim/cockpit/autopilot/airspeed,,100,380,,
+STROBE LIGHT,OK,,,43,laminar/B738/toggle_switch/position_light_pos,,!1,,=1,,0,,,,,SRS/X-KeyPad/SharedInt[0],,-1,1,up-down,
+VS,,,,48,laminar/B738/autopilot/vs_status,,1,,>0,,0,laminar/B738/autopilot/vs_press,laminar/B738/autopilot/vs_press,,,sim/cockpit/autopilot/vertical_velocity,,,,,Vertical Speed to [n] feet per minute
+VS Down,TODO,,,,,,,,,,,,,,,,,,,,
+VS Up,TODO,,,,,,,,,,,,,,,,,,,,
+NAV2,OK,,,5,sim/cockpit2/radios/actuators/audio_selection_nav2,,!1,,1,,,sim/audio_panel/monitor_audio_nav2,,,,sim/cockpit/radios/nav2_stdby_freq_hz,100,,,,NAV 2 Stand By Set to [n] Mega Hertz
+Range Down,OK,,1,51,,,1,,,,,,,,,laminar/B738/EFIS/capt/map_range,,0,7,down,
+LVL CHG,,,,56,laminar/B738/autopilot/lvl_chg_status,,=0,,=1,,,laminar/B738/autopilot/lvl_chg_press,,,,,,,,,
+ND Mode,OK,,,58,,,,,,,,,,,,laminar/B738/EFIS_control/capt/map_mode_pos,,0,3,wrap,
+Range Up,OK,,,59,,,1,,,,,,,,,laminar/B738/EFIS/capt/map_range,,0,7,up,
+ADF1,,,,6,sim/cockpit2/radios/actuators/audio_selection_adf1,,!1,,1,,,sim/audio_panel/monitor_audio_adf1,,,,sim/cockpit/radios/adf1_freq_hz,,,,,ADF 1 Set to [n] Kilo Hertz
+ADF2,,,1,6,sim/cockpit2/radios/actuators/audio_selection_adf2,,!1,,1,,,sim/audio_panel/monitor_audio_adf2,,,,sim/cockpit/radios/adf2_freq_hz,,,,,ADF 2 Set to [n] Kilo Hertz
+7,,,,60,,,,,1,,,SRS/X-KeyPad/Keypad_7,,,,,,,,,
+7,,,1,60,,,,,1,,,SRS/X-KeyPad/Keypad_7,,,,,,,,,
+4,,,,61,,,,,1,,,SRS/X-KeyPad/Keypad_4,,,,,,,,,
+4,,,1,61,,,,,1,,,SRS/X-KeyPad/Keypad_4,,,,,,,,,
+1,,,,62,,,,,1,,,SRS/X-KeyPad/Keypad_1,,,,,,,,,
+1,,,1,62,,,,,1,,,SRS/X-KeyPad/Keypad_1,,,,,,,,,
+Minus,,,,63,,,,,1,,,SRS/X-KeyPad/Keypad_Minus,,,,,,,,,
+Minus,,,1,63,,,,,1,,,SRS/X-KeyPad/Keypad_Minus,,,,,,,,,
+VOR LOC,,,,64,laminar/B738/autopilot/vorloc_status,,=0,,=1,,,laminar/B738/autopilot/vorloc_press,,,,,,,,,
+APR,,,,65,laminar/B738/autopilot/app_status,,=0,,=1,,,laminar/B738/autopilot/app_press,,,,,,,,,
+8,,,,68,,,,,1,,,SRS/X-KeyPad/Keypad_8,,,,,,,,,
+8,,,1,68,,,,,1,,,SRS/X-KeyPad/Keypad_8,,,,,,,,,
+5,,,,69,,,,,1,,,SRS/X-KeyPad/Keypad_5,,,,,,,,,
+5,,,1,69,,,,,1,,,SRS/X-KeyPad/Keypad_5,,,,,,,,,
+2,,,,70,,,,,1,,,SRS/X-KeyPad/Keypad_2,,,,,,,,,
+2,,,1,70,,,,,1,,,SRS/X-KeyPad/Keypad_2,,,,,,,,,
+0,,,,71,,,,,1,,,SRS/X-KeyPad/Keypad_0,,,,,,,,,
+0,,,1,71,,,,,1,,,SRS/X-KeyPad/Keypad_0,,,,,,,,,
+SHIFT,,,,72,,,1,,,,,SRS/X-KeyPad/Toggle_Shift,,,,,,,,,
+SHIFT,,,1,72,,,1,,,,,SRS/X-KeyPad/Toggle_Shift,,,,,,,,,
+CLR,,,,75,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
+CLR,,,1,75,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
+9,,,,76,,,,,1,,,SRS/X-KeyPad/Keypad_9,,,,,,,,,
+9,,,1,76,,,,,1,,,SRS/X-KeyPad/Keypad_9,,,,,,,,,
+6,,,,77,,,,,1,,,SRS/X-KeyPad/Keypad_6,,,,,,,,,
+6,,,1,77,,,,,1,,,SRS/X-KeyPad/Keypad_6,,,,,,,,,
+3,,,,78,,,,,1,,,SRS/X-KeyPad/Keypad_3,,,,,,,,,
+3,,,1,78,,,,,1,,,SRS/X-KeyPad/Keypad_3,,,,,,,,,
+.,,,,79,,,,,1,,,SRS/X-KeyPad/Keypad_Decimal,,,,,,,,,
+.,,,1,79,,,,,1,,,SRS/X-KeyPad/Keypad_Decimal,,,,,,,,,
+FD,OK,,,8,laminar/B738/autopilot/flight_director_pos,,=0,,=1,,0,laminar/B738/autopilot/flight_director_toggle,,,,,,,,,
+FD COPILOT,OK,,1,8,laminar/B738/autopilot/flight_director_fo_pos,,=0,,=1,,0,laminar/B738/autopilot/flight_director_fo_toggle,,,,,,,,,
+ATHR,OK,,,9,laminar/B738/autopilot/autothrottle_arm_pos,,=0,,=1,,0,laminar/B738/autopilot/autothrottle_arm_toggle,laminar/B738/autopilot/autothrottle_arm_toggle,,,,,,,,

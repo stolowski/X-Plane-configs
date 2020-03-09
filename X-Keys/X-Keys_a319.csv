@@ -1,11 +1,11 @@
 Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
-AP,,,,0,AirbusFBW/AP1Engage,,=0,,=1,,2,A319/toggle_AP,,,,,,,,,
-Ident,,,,1,AirbusFBW/XPDRPower,,=0,,>0,,,,,,,SRS/X-KeyPad/SharedInt[1],,0,7777,,Transponder set to [N]
-XPDR Mode,,,1,1,AirbusFBW/XPDRPower,,=0,,>0,,,A319/transponder_Mode,,Transponder Mode changed,,AirbusFBW/XPDRPower,,,,,
+AP,,,,0,AirbusFBW/AP1Engage,,=0,,=1,,,toliss_airbus/ap1_push,,,,,,,,,
+Ident,,,,30,AirbusFBW/XPDRPower,,=0,,>0,,,,,,,SRS/X-KeyPad/SharedInt[1],,0,7777,,Transponder set to [N]
+XPDR Mode,,,1,30,AirbusFBW/XPDRPower,,=0,,>0,,,A319/transponder_Mode,,Transponder Mode changed,,AirbusFBW/XPDRPower,,,,,
 COM1,,,,2,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
-COM1 XFR,,,,10,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
+COM1 XFR,,,1,2,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
 COM2,,,,3,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
-COM2 XFR,,,,11,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
+COM2 XFR,,,1,3,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
 NAV1,,,,4,sim/cockpit2/radios/actuators/audio_selection_nav1,,!1,,1,,,sim/audio_panel/monitor_audio_nav1,,,,sim/cockpit/radios/nav1_freq_hz,100,,,,NAV 1 Set to [n] Mega Hertz
 NAV1 XFR,,,,12,,,1,,,,,sim/radios/nav1_standy_flip,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
 NAV2,,,,5,sim/cockpit2/radios/actuators/audio_selection_nav2,,!1,,1,,,sim/audio_panel/monitor_audio_nav2,,,,sim/cockpit/radios/nav2_freq_hz,100,,,,NAV 2 Set to [n] Mega Hertz
@@ -15,42 +15,49 @@ ADF2,,,1,6,sim/cockpit2/radios/actuators/audio_selection_adf2,,!1,,1,,,sim/audio
 Gear,,,,7,AirbusFBW/NoseGearPos,,=1,,<1,,,sim/flight_controls/landing_gear_toggle,,,,,,,,,
 FD,,,,8,AirbusFBW/FD1Engage,,=1,,=0,,3,toliss_airbus/fd1_push,toliss_airbus/fd1_push,Flight Director On,Flight Director Off,,,,,,
 ATHR,,,,9,AirbusFBW/ATHRmode,,>0,,,=0,,AirbusFBW/ATHRbutton,,,,,,,,,
-LANDING LIGHTS,,,,18,,,!1,,1,,,A319/toggle_land_lights,A319/toggle_land_lights,,,,,,,,
+LANDING LIGHTS,,,,20,,,!1,,1,,,A319/toggle_land_lights,A319/toggle_land_lights,,,,,,,,
 Parking brakes,,,,15,sim/cockpit2/controls/parking_brake_ratio,,!1,,1,,1,sim/flight_controls/brakes_toggle_max,sim/flight_controls/brakes_toggle_max,Brakes On,Brakes Off,,,,,,
-Warn,,,,22,,,,,,,,sim/annunciator/clear_master_caution,,,,,,,,,
+Warn,,,,22,AirbusFBW/MasterWarn,,=0,,,>1,,sim/annunciator/clear_master_warning,,,,,,,,,
 Auto Brake,,,,23,,,,,,,,,,,,SRS/X-KeyPad/SharedInt[0],,0,1,wrap,
 Auto Brake Off,,,1,23,,,0,0,0,0,1,AirbusFBW/AbrkLo;AirbusFBW/AbrkLo,,Autobrakes off,,,,,,,
 HDG,,,,16,,,,,,,,AirbusFBW/PushHDGSel,,Heading Managed Mode,,sim/cockpit2/autopilot/heading_dial_deg_mag_pilot,,0,360,,Heading set to [N] degrees
 HDG,,,1,16,,,,,,,,AirbusFBW/PullHDGSel,,Heading Select Mode,,sim/cockpit2/autopilot/heading_dial_deg_mag_pilot,,0,360,,Heading set to [N] degrees
 ,,,,,,,,,,,,,,,,,,,,,
 HDG SYNC,,,,17,,,1,,,,,sim/autopilot/heading_sync,,,,,,,,,
-TAXI LIGHTS,,,,26,,,1,,,,,A319/toggle_nose_lights,A319/toggle_nose_lights,,,,,,,,
+TAXI LIGHTS,,,,27,,,1,,,,,A319/toggle_nose_lights,A319/toggle_nose_lights,,,,,,,,
 Plan Pushback,,,,31,,,,,,,,BetterPushback/start_planner,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
 Start Pushback,,,1,31,,,,,,,,BetterPushback/start,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
 ,,,,,,,,,,,,,,,,,,,,,
 ALT,,,,24,,,1,,,,,AirbusFBW/PushAltitude,,Altitude Managed Mode,,sim/cockpit/autopilot/altitude,,,,,Altitude set to [n] feet
 ALT Pull,,,1,24,,,1,,,,,AirbusFBW/PullAltitude,,Altitude Select Mode,,sim/cockpit/autopilot/altitude,,,,,Altitude set to [n] feet
-,,,,,,,,,,,,,,,,,,,,,
-HDG DOWN,,,,25,,,,,1,,,*sim/autopilot/heading_down,,,,,,,,,
-BEACON LIGHT,,,,34,,,!1,,1,,,A319/toggle_bcn_lights,A319/toggle_bcn_lights,,,,,,,,
-ND Mode Up,,,,35,,,1,,,,,A319/inc_ND_mode,,,,,,,,,
-ND Mode Down,,,1,35,,,1,,,,,A319/dec_ND_mode,,,,,,,,,
-HDG UP,,,,33,,,,,1,,,*sim/autopilot/heading_up,,,,,,,,,
+ALT Down,,,,25,,,1,,,,,,,,,SRS/X-KeyPad/SharedInt[4],,0,1,wrap,
+ALT Step 100/1000,,,1,25,,,,,,,,,,,,AirbusFBW/ALT100_1000,,0,1,wrap,
+ALT Up,,,,33,,,1,,,,,,,,,SRS/X-KeyPad/SharedInt[5],,0,1,wrap,
+ALT Step 100/1000,,,1,33,,,,,,,,,,,,AirbusFBW/ALT100_1000,,0,1,wrap,
+HDG DOWN,,,,26,,,,,1,,,*sim/autopilot/heading_down,,,,,,,,,
+BEACON LIGHT,,,,35,,,!1,,1,,,A319/toggle_bcn_lights,A319/toggle_bcn_lights,,,,,,,,
+ND Mode Up,,,,58,,,1,,,,,A319/inc_ND_mode,,,,,,,,,
+ND Mode Down,,,1,58,,,1,,,,,A319/dec_ND_mode,,,,,,,,,
+TERR,,,,66,,,=0,,=1,,,,,,,AirbusFBW/TerrainSelectedND1,,0,1,up-down,
+HDG UP,,,,34,,,,,1,,,*sim/autopilot/heading_up,,,,,,,,,
 SPD,,,,41,,,,,,,,toliss_airbus/spd_push,,Speed Managed Mode,,sim/cockpit/autopilot/airspeed,,100,399,,Speed set to [n]
 SPD Pull,,,1,41,,,,,,,,toliss_airbus/spd_pull,,Speed Select Mode,,,,,,,
-STROBE LIGHT,,,,42,,,!1,,1,,1,A319/toggle_strobe_lights,A319/toggle_strobe_lights,,,,,,,,
-RNG Plus,,,,43,,,1,,,,,A319/inc_ND_range,,,,,,,,,
-RNG Minus,,,1,43,,,1,,,,,A319/dec_ND_range,,,,,,,,,
+SPD Down,,,,42,,,1,,,,,,,,,SRS/X-KeyPad/SharedInt[2],,0,1,wrap,
+SPD Up,,,,50,,,1,,,,,,,,,SRS/X-KeyPad/SharedInt[3],,0,1,wrap,
+STROBE LIGHT,,,,43,,,!1,,1,,1,A319/toggle_strobe_lights,A319/toggle_strobe_lights,,,,,,,,
+RNG Plus,,,,59,,,1,,,,,A319/inc_ND_range,,,,,,,,,
+RNG Minus,,,,51,,,1,,,,,A319/dec_ND_range,,,,,,,,,
 Baro,,,,14,,,1,,,,,,,,,sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot;sim/cockpit2/gauges/actuators/barometer_setting_in_hg_copilot,0.01,,,,Altimeter set to [N] inches of mercury
 Baro STD,,,1,14,AirbusFBW/BaroStdCapt,,=0,,=1,,,,,,,AirbusFBW/BaroStdCapt;AirbusFBW/BaroStdFO,,0,1,wrap,Standard Altimeter[=1]
-NAV LIGHTS,,,,50,,,=0,,>0,,1,A319/toggle_nav_lights,A319/toggle_nav_lights,,,,,0,2,up-down,
+NAV LIGHTS,,,,19,,,=0,,>0,,1,A319/toggle_nav_lights,A319/toggle_nav_lights,,,,,0,2,up-down,
 MENU,,,,52,,,,,,,,toliss_airbus/iscs_open,,,,,,,,,
 VS,,,,48,,,,,,,,AirbusFBW/PushVSSel,,Vertical Speed Managed Mode,,sim/cockpit/autopilot/vertical_velocity,,,,,Vertical Speed to [n] feet per minute
 VS Pull,,,,48,,,,,,,,AirbusFBW/PullVSSel,,Vertical Speed Managed Mode,,sim/cockpit/autopilot/vertical_velocity,,,,,Vertical Speed to [n] feet per minute
-,,,,,,,,,,,,,,,,,,,,,
-CRS DOWN,,,,49,,,1,,,,,*sim/radios/obs_HSI_down,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
-CDI,,,,54,,,1,,,,,,,,,sim/cockpit/switches/HSI_selector,,0,2,wrap,H S I Set to V O R  1[=0];H S I Set to V O R 2[=1];H S I Set To GPS[=2]
-CRS UP,,,,57,,,1,,,,,*sim/radios/obs_HSI_up,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
+VS Minus,,,,49,,,1,,,,0,A319/VS_Dec,,,,sim/cockpit/autopilot/vertical_velocity,,,,,
+VS Plus,,,,57,,,1,,,,0,A319/VS_Inc,,,,sim/cockpit/autopilot/vertical_velocity,,,,,
+CRS DOWN,,,,10,,,1,,,,,*sim/radios/obs_HSI_down,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
+CDI,,,,11,,,1,,,,,,,,,sim/cockpit/switches/HSI_selector,,0,2,wrap,H S I Set to V O R  1[=0];H S I Set to V O R 2[=1];H S I Set To GPS[=2]
+CRS UP,,,,18,,,1,,,,,*sim/radios/obs_HSI_up,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
 7,,,,60,,,,,1,,,SRS/X-KeyPad/Keypad_7,,,,,,,,,
 7,,,1,60,,,,,1,,,SRS/X-KeyPad/Keypad_7,,,,,,,,,
 4,,,,61,,,,,1,,,SRS/X-KeyPad/Keypad_4,,,,,,,,,
@@ -61,9 +68,9 @@ Minus,,,,63,,,,,1,,,SRS/X-KeyPad/Keypad_Minus,,,,,,,,,
 Minus,,,1,63,,,,,1,,,SRS/X-KeyPad/Keypad_Minus,,,,,,,,,
 LOC,,,,64,,,,,,,,AirbusFBW/LOCbutton,,,,,,,,,
 APR,,,,65,sim/cockpit/autopilot/autopilot_state,,!3072,,2048,1024,,AirbusFBW/APPRbutton,,,,,,,,,
-EXPED,,,,66,,,,,,,,AirbusFBW/EXPEDbutton,,,,,,,,,
-CLR,,,,67,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
-CLR,,,1,67,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
+EXPED,,,,74,,,,,,,,AirbusFBW/EXPEDbutton,,,,,,,,,
+CLR,,,,75,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
+CLR,,,1,75,,,,,1,,,SRS/X-KeyPad/Keypad_Clear,,,,,,,,,
 8,,,,68,,,,,1,,,SRS/X-KeyPad/Keypad_8,,,,,,,,,
 8,,,1,68,,,,,1,,,SRS/X-KeyPad/Keypad_8,,,,,,,,,
 5,,,,69,,,,,1,,,SRS/X-KeyPad/Keypad_5,,,,,,,,,
