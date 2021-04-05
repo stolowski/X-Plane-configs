@@ -1,0 +1,3 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+Plan Pushback,,,,7,,,,,,,,BetterPushback/start_planner,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+Start Pushback,,,,15,,,,,,,,BetterPushback/start,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz

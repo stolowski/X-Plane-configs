@@ -1,0 +1,13 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+COM1,,,,5,sim/cockpit2/radios/actuators/audio_selection_com1,,!1,,1,,,sim/audio_panel/monitor_audio_com1,,,,sim/cockpit/radios/com1_freq_hz,100,,,,COM 1 Set to [n] Mega Hertz
+COM1 XFR,,,1,13,,,1,,,,,sim/radios/com1_standy_flip,,,,sim/cockpit/radios/com1_stdby_freq_hz,100,,,,COM 1 Stand By Set to [n] Mega Hertz
+COM2,,,,6,sim/cockpit2/radios/actuators/audio_selection_com2,,<1,,>0,,,sim/audio_panel/monitor_audio_com2,,,,sim/cockpit/radios/com2_freq_hz,100,,,,COM 2 Set to [n] Mega Hertz
+COM2 XFR,,,1,14,,,1,,,,,sim/radios/com2_standy_flip,,,,sim/cockpit/radios/com2_stdby_freq_hz,100,,,,COM 2 Stand By Set to [n] Mega Hertz
+NAV1,,,,3,sim/cockpit2/radios/actuators/audio_selection_nav1,,!1,,1,,,sim/audio_panel/monitor_audio_nav1,,,,sim/cockpit/radios/nav1_freq_hz,100,,,,NAV 1 Set to [n] Mega Hertz
+NAV1 XFR,,,,11,,,1,,,,,sim/radios/nav1_standy_flip,,,,sim/cockpit/radios/nav1_stdby_freq_hz,100,,,,NAV 1 Stand By Set to [n] Mega Hertz
+NAV2,,,,4,sim/cockpit2/radios/actuators/audio_selection_nav2,,!1,,1,,,sim/audio_panel/monitor_audio_nav2,,,,sim/cockpit/radios/nav2_freq_hz,100,,,,NAV 2 Set to [n] Mega Hertz
+NAV2 XFR,,,,12,,,1,,,,,sim/radios/nav2_standy_flip,,,,sim/cockpit/radios/nav2_stdby_freq_hz,100,,,,NAV 2 Stand By Set to [n] Mega Hertz
+ADF1,,,,6,sim/cockpit2/radios/actuators/audio_selection_adf1,,!1,,1,,,sim/audio_panel/monitor_audio_adf1,,,,sim/cockpit/radios/adf1_freq_hz,,,,,ADF 1 Set to [n] Kilo Hertz
+ADF2,,,1,6,sim/cockpit2/radios/actuators/audio_selection_adf2,,!1,,1,,,sim/audio_panel/monitor_audio_adf2,,,,sim/cockpit/radios/adf2_freq_hz,,,,,ADF 2 Set to [n] Kilo Hertz
+XPDR,,,,22,sim/cockpit2/radios/actuators/transponder_mode,,=0,,>0,,,,,,,sim/cockpit2/radios/actuators/transponder_code,,1,9999,,
+XPDR Mode,,,1,22,sim/cockpit2/radios/actuators/transponder_mode,,=0,=1,=3,=2,,,,,,sim/cockpit2/radios/actuators/transponder_mode,,0,3,up-down,Transponder Off[=0];Transponder Standby[=1];Transponder On Mode A[=2];Transponder On Mode C[=3]

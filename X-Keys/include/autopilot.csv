@@ -1,0 +1,25 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+VS,,,,48,,,1,,,,,sim/autopilot/vertical_speed,sim/autopilot/vertical_speed,,,sim/cockpit/autopilot/vertical_velocity,,,,,
+VS Up,,,,49,,,1,,,,,sim/autopilot/vertical_speed_up,sim/autopilot/vertical_speed_up,,,,,,,,
+VS Down,,,,50,,,1,,,,,sim/autopilot/vertical_speed_down,sim/autopilot/vertical_speed_down,,,,,,,,
+ALT,,,,40,sim/cockpit/autopilot/autopilot_state,,!16384,,16384,,,sim/autopilot/altitude_hold,,Altitude Mode off[!&16416];Altitude Mode On[&16384];Altitude Mode Arm[&32],,sim/cockpit/autopilot/altitude,,,,,Altitude set to [n] feet
+ALT Up,,,,41,,,,,,,,,,,,sim/cockpit/autopilot/altitude,,0,50000,up,
+ALT Down,,,,42,,,,,,,,,,,,sim/cockpit/autopilot/altitude,,0,50000,down,
+HDG,,,,32,sim/cockpit/autopilot/autopilot_state,,!2,,2,,2,sim/autopilot/heading,sim/autopilot/heading,Heading Mode On,,sim/cockpit2/autopilot/heading_dial_deg_mag_pilot,,0,360,,Heading set to [N] degrees
+HDG DOWN,,,,33,,,,,1,,,*sim/autopilot/heading_down,,,,,,,,,
+HDG UP,,,,34,,,,,1,,,*sim/autopilot/heading_up,,,,,,,,,
+HDG SYNC,,,,35,,,1,,,,,sim/autopilot/heading_sync,,,,,,,,,
+DG Sync,,,1,35,,,1,,,,,sim/instruments/DG_sync_mag,,,,,,,,,
+CRS,,,,16,,,1,,,,,,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,Course set to [N] degrees
+CRS UP,,,,17,,,1,,,,,*sim/radios/obs_HSI_up,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,
+CRS DOWN,,,,18,,,1,,,,,*sim/radios/obs_HSI_down,,,,sim/cockpit2/radios/actuators/hsi_obs_deg_mag_pilot,,0,360,,
+NAV,,,,64,sim/cockpit/autopilot/autopilot_state,,!768,,512,256,,sim/autopilot/NAV,,Nav Off[!768];Nav On[&512];Nav Arm[&256],,,,,,,
+VNAV,,,,65,,,,,,,,sim/autopilot/vnav,,,,,,,,,
+APR,,,,73,sim/cockpit/autopilot/autopilot_state,,!3072,,2048,1024,,sim/autopilot/approach,,Approach Off[!&3072];Approach On[&2048];Approach Arm[&1024],,,,,,,
+FD,,,,8,sim/cockpit/autopilot/autopilot_mode,,!3,,3,,3,sim/autopilot/fdir_toggle,sim/autopilot/fdir_toggle,Flight Director On,,,,,,,
+CDI,,,,27,,,1,,,,,,,,,sim/cockpit/switches/HSI_selector,,0,2,wrap,H S I Set to V O R  1[=0];H S I Set to V O R 2[=1];H S I Set To GPS[=2]
+ATHR,,,,10,sim/cockpit2/autopilot/autothrottle_on,,=0,,=1,,,sim/autopilot/autothrottle_toggle,sim/autopilot/autothrottle_toggle,,,,,,,,
+TOGA,,,,19,sim/cockpit2/autopilot/TOGA_status,,=0,,>0,,,sim/engines/TOGA_power,sim/engines/TOGA_power,,,,,,,,
+SPD,,,,24,,,1,,,,,,,,,sim/cockpit2/autopilot/airspeed_dial_kts,,0,480,,Speed set to [N] knots
+SPD Up,,,,25,,,1,,,,,*sim/autopilot/airspeed_up,,,,,,,,,
+SPD Down,,,,26,,,1,,,,,*sim/autopilot/airspeed_down,,,,,,,,,

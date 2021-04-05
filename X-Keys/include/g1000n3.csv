@@ -1,0 +1,13 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+FMS In Down,,,,47,,,1,,,,,sim/GPS/g1000n3_fms_inner_down,,,,,,,,,
+FMS Out Down,,,,55,,,1,,,,,sim/GPS/g1000n3_fms_outer_down,,,,,,,,,
+ENT,,,,53,,,1,,,,,sim/GPS/g1000n3_ent,,,,,,,,,
+FMS IN UP,,,,46,,,1,,,,,sim/GPS/g1000n3_fms_inner_up,,,,,,,,,
+FMS OUT UP,,,,54,,,1,,,,,sim/GPS/g1000n3_fms_outer_up,,,,,,,,,
+CLR,,,,45,,,1,,,,,sim/GPS/g1000n3_clr,,,,,,,,,
+BARO MINUS,,,,1,,,1,,,,,sim/GPS/g1000n3_baro_down,,,,sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot,0.01,20,35,,
+BARO PLUS,,,,0,,,1,,,,,sim/GPS/g1000n3_baro_up,,,,sim/cockpit2/gauges/actuators/barometer_setting_in_hg_pilot,0.01,20,35,,
+PROC,,,,44,,,1,,,,,sim/GPS/g1000n3_proc,,,,,,,,,
+DIR,,,,52,,,1,,,,,sim/GPS/g1000n3_direct,,,,,,,,,
+WARN,,,,66,,,1,,,,,sim/annunciator/clear_master_warning,,,,,,,,,
+FPL,,,,37,,,1,,,,,sim/GPS/g1000n3_fpl,,,,,,,,,

@@ -1,0 +1,5 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+TAXI Lights,tODO,,,29,sim/cockpit/electrical/taxi_light_on,,=0,,=1,,,sim/lights/taxi_lights_toggle,sim/lights/taxi_lights_toggle,,,,,,,,
+STROBE Lights,,,,28,sim/cockpit/electrical/strobe_lights_on,,=0,,=1,,,sim/lights/strobe_lights_toggle,sim/lights/strobe_lights_toggle,,,,,,,,
+NAV Lights,,,,37,sim/cockpit/electrical/nav_lights_on,,=0,,=1,,,sim/lights/nav_lights_toggle,sim/lights/nav_lights_toggle,,,,,,,,
+BEACON Lights,,,,36,sim/cockpit/electrical/beacon_lights_on,,=0,,=1,,,sim/lights/beacon_lights_toggle,sim/lights/beacon_lights_toggle,,,,,,,,

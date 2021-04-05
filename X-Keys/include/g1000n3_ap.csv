@@ -1,0 +1,12 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+FD,,,,8,,,1,,,,,sim/GPS/g1000n3_fd,,,,,,,,,
+AP,,,,9,,,1,,,,,sim/GPS/g1000n3_ap,,,,,,,,,
+NAV,,,,64,,,1,,,,,sim/GPS/g1000n3_nav,,,,,,,,,
+VNAV,,,,65,,,1,,,,,sim/GPS/g1000n3_vnv,,,,,,,,,
+ALT MINUS,,,,42,,,1,,,,,sim/GPS/g1000n3_alt_inner_down,,,,,,,,,
+ALT PLUS,,,,41,,,1,,,,,sim/GPS/g1000n3_alt_inner_up,,,,,,,,,
+VS,,,,48,,,1,,,,,sim/GPS/g1000n3_vs,,,,,,,,,
+NOSE DOWN,VS-,,,50,,,1,,,,,sim/GPS/g1000n3_nose_down,,,,,,,,,
+NOSE UP,VS+,,,49,,,1,,,,,sim/GPS/g1000n3_nose_up,,,,,,,,,
+FLC/IAS,,,,43,,,1,,,,,sim/GPS/g1000n3_flc,,,,,,,,,
+APR,,,,73,,,1,,,,,sim/GPS/g1000n3_apr,,,,,,,,,
