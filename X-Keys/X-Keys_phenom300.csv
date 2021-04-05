@@ -1,0 +1,11 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+#include common.csv,,,,,,,,,,,,,,,,,,,,,
+#include baro.csv,,,,,,,,,,,,,,,,,,,,,
+#include autopilot.csv,,,,,,,,,,,,,,,,,,,,,
+#include radios_nav.csv,,,,,,,,,,,,,,,,,,,,,
+#include g1000n3.csv,,,,,,,,,,,,,,,,,,,,,
+#include g1000n3_ap.csv,,,,,,,,,,,,,,,,,,,,,
+#include lights.csv,,,,,,,,,,,,,,,,,,,,,
+TAXI Lights,overrides default,,,29,aerobask/lights/sw_ldg_taxi,,=0,,=1,,=1,aerobask/lights/ldg_taxi_up;aerobask/lights/ldg_taxi_up;aerobask/lights/ldg_taxi_dn,aerobask/lights/ldg_taxi_dn,,,,,,,,
+LAND Lights,overrides default,,,20,aerobask/lights/sw_ldg_taxi,,=0,,=2,,=2,aerobask/lights/ldg_taxi_up;aerobask/lights/ldg_taxi_up,aerobask/lights/ldg_taxi_dn;aerobask/lights/ldg_taxi_dn,,,,,,,,
+BEACON Lights,overrides default. coupled with nav light,,,36,sim/cockpit/electrical/nav_lights_on,,=0,,=1,,,,,,,,,,,,

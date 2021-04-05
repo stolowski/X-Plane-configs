@@ -1,0 +1,11 @@
+Name,Comments,X-Key Unit Number,Shift Flag,Key,Logic Dataref,Float Scale Factor,Bank 1 On,Bank 1 Blink,Bank 2 On,Bank 2 Blink,Command Logic Test,False (Default) Command,True Command,False (Default) Speech,True Speech,Numeric Dataref,Multiply By,Min,Max,Increment,Numeric Speech
+#include common.csv,,,,,,,,,,,,,,,,,,,,,
+#include baro.csv,,,,,,,,,,,,,,,,,,,,,
+#include autopilot.csv,,,,,,,,,,,,,,,,,,,,,
+#include radios_nav.csv,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,
+LAND Lights,,,,20,afm/sr/switches/landing,,=0,,>0,,,afm/sr/cmd/switches/landing_Toggle,afm/sr/cmd/switches/landing_Toggle,,,,,,,,
+STROBE Lights,,,,28,afm/sr/switches/strobe,,=0,,>0,,,afm/sr/cmd/switches/strobe_Toggle,afm/sr/cmd/switches/strobe_Toggle,,,,,,,,
+NAV Lights,,,,37,afm/sr/switches/nav,,=0,,>0,,,afm/sr/cmd/switches/nav_Toggle,afm/sr/cmd/switches/nav_Toggle,,,,,,,,
+FUEL TANK,,,,51,afm/sr/switches/fuelSelector,,1,,,,>0,afm/sr/cmd/fuel/selRight,afm/sr/cmd/fuel/selLeft,,,,,,,,
+FUEL PUMP,,,,59,afm/sr/switches/fuelPump,,<1,,=1,,<1,afm/sr/cmd/switches/fpumpDn,afm/sr/cmd/switches/fpumpUp,,,,,,,,
